@@ -1,2 +1,11 @@
 .*swp
 *pyc
+
+# latex
+*aux
+*log
+*toc
+*out
+*lot
+*lof
+*pdf
