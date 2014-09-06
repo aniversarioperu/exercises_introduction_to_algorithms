@@ -25,9 +25,23 @@ def sort():
     
     print x
     
-def inverse_sort():    
-    A = [3, 4, 6, 2, 5, 1, 0, 7, 9, 8]
-    print("original:\t", A)
+def inverse_sort1(A):
+    for j in range(1, len(A)):
+        # j = 8
+        key = A[j] # key = 9
+        i = j - 1  # i = 6
+
+        # A[i] = 0; A[i + 1] = 9
+        while i >= 0 and A[i] < key:
+            # A = [3, 4, 6, 2, 5, 1, 9, 0, 7, 8]
+            A[i+1] = A[i]
+            i = i - 1
+        A[i+1] = key
+    return A
+
+
+def inverse_sort2(A):
+    # this is not so efficient
     for j in range(1, len(A)):
         # j = 8
         key = A[j] # key = 9
@@ -39,8 +53,7 @@ def inverse_sort():
             A[i+1] = A[i]
             A[i] = key
             i = i - 1
-    print("sorted:\t", A)
-
+    return A
 """
 x = [3,4,6,2,5,1,0,7,9,8]
 print x
