@@ -26,18 +26,20 @@ def sort():
     print x
     
 def inverse_sort():    
-    x = [3,4,6,2,5,1,0,7,9,8]
-    print("original:\t", x)
-    for i in range(1, len(x)):
-        key = x[i]
-        print key
-        j = i - 1
+    A = [3, 4, 6, 2, 5, 1, 0, 7, 9, 8]
+    print("original:\t", A)
+    for j in range(1, len(A)):
+        # j = 8
+        key = A[j] # key = 9
+        i = j - 1  # i = 6
 
-        while j >= 0 and x[j] < key:
-            x[j + 1] = x[j]
-            j = j - 1
-        x[j + 1] = key
-    print("sorted:\t", x)
+        # A[i] = 0; A[i + 1] = 9
+        while i >= 0 and A[i] < A[i+1]:
+            # A = [3, 4, 6, 2, 5, 1, 9, 0, 7, 8]
+            A[i+1] = A[i]
+            A[i] = key
+            i = i - 1
+    print("sorted:\t", A)
 
 """
 x = [3,4,6,2,5,1,0,7,9,8]
@@ -91,6 +93,7 @@ print "Best average case (1 + 2 + n)/n => n(n+1)/2n -> (n+1)/2 -> teta-n"
 """
 def main():
     print("run functions")
+    inverse_sort()
 
 
 if __name__ == "__main__":
