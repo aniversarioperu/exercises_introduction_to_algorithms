@@ -64,3 +64,34 @@ def inverse_sort2(A):
     return A
 \end{lstlisting}
 
+
+
+\begin{description}
+ \item[2.1-3] Searching problem.
+\end{description}
+\begin{lstlisting}
+def search_problem(v):
+    """Enter value ``v`` to do a linear search in a list of ints."""
+    from random import randint
+
+    A = []
+    i = 0
+    while i < 100:
+        A.append(randint(0, 100))
+        i += 1
+
+    for i in range(0, len(A)):
+        if A[i] == v:
+            print(i)
+            return i
+    print("None")
+    return None
+\end{lstlisting}
+
+\begin{description}
+ \item[Initialization] When $i = 0$ the loop starts so there are no items in the loop.
+ \item[Maintenance] ''If it is True before an iteration it remains True before the next iteration''.
+    If index is 50 and it is not equal to $v$, then the loop continues.
+ \item[Termination] It the value $v$ is found it will be retuned and the algorithm will exit $0$. If
+    the value $v$ is not found in the list, the algorithm will return $None$ and exit $0$.
+\end{description}

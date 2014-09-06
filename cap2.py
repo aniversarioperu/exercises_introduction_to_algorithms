@@ -26,6 +26,7 @@ def sort():
     print x
     
 def inverse_sort1(A):
+    """Exercises 2.1-2."""
     for j in range(1, len(A)):
         # j = 8
         key = A[j] # key = 9
@@ -41,7 +42,10 @@ def inverse_sort1(A):
 
 
 def inverse_sort2(A):
-    # this is not so efficient
+    """
+    Exercises 2.1-2.
+    This is not so efficient.
+    """
     for j in range(1, len(A)):
         # j = 8
         key = A[j] # key = 9
@@ -54,6 +58,25 @@ def inverse_sort2(A):
             A[i] = key
             i = i - 1
     return A
+
+
+def search_problem(v):
+    """Enter value ``v`` to do a linear search in a list of ints."""
+    from random import randint
+
+    a = []
+    i = 0
+    while i < 100:
+        a.append(randint(0, 100))
+        i += 1
+
+    for i in range(0, len(a)):
+        if a[i] == v:
+            print(i)
+            return i
+    print("None")
+    return None
+
 """
 x = [3,4,6,2,5,1,0,7,9,8]
 print x
@@ -106,7 +129,7 @@ print "Best average case (1 + 2 + n)/n => n(n+1)/2n -> (n+1)/2 -> teta-n"
 """
 def main():
     print("run functions")
-    inverse_sort()
+    search_problem(10)
 
 
 if __name__ == "__main__":
