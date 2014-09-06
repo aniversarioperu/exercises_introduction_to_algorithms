@@ -1,7 +1,9 @@
 .*swp
 *pyc
+.idea
 
 # latex
+*.backup
 *aux
 *log
 *toc
