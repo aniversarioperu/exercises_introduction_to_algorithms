@@ -64,3 +64,35 @@ def inverse_sort2(A):
     return A
 \end{lstlisting}
 
+
+\begin{description}
+ \item[2.1-3] Lineal searching problem.
+\end{description}
+
+\begin{lstlisting}
+for i = 1 to A.length
+    if A[i] = = v
+	return i
+return Nil
+\end{lstlisting}
+
+\begin{list}{}{}
+ \item[Initialization:] Before the first iteration the subarray $A$ is empty so it could return $Nil$.
+ \item[Maintenance:] Before an iteration the value $A[i]$ could be $v$ or not, to the output can be either the index $i$ or $Nil$.
+ \item[Termination:] It the last item is not equal to $v$ then the algorithm should return $Nil$.
+\end{list}
+
+\begin{description}
+ \item[2.1-4] Lineal searching problem.
+\end{description}
+\begin{lstlisting}
+for i = 1 to n
+    sum = A[i] + B[i]
+    C[i] = sum
+return C
+\end{lstlisting}
+\begin{list}{}{}
+ \item[Initialization:] Before the first iteration no numbers were added so the array $C$ is returned as empty.
+ \item[Maintenance:] Before an iteration the items in array $C$ should contain those that were added from the same index in the $A$ and $B$ arrays.
+ \item[Termination:] After all items were added and included, the array $C$ will be returned.
+\end{list}
