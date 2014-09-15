@@ -67,31 +67,64 @@ def inverse_sort2(A):
 
 
 \begin{description}
- \item[2.1-3] Searching problem.
+ \item[2.1-3] Lineal searching problem.
+\end{description}
+
+\begin{lstlisting}
+for i = 1 to A.length
+    if A[i] = = v
+	return i
+return Nil
+\end{lstlisting}
+
+\begin{list}{}{}
+ \item[Initialization:] Before the first iteration the subarray $A$ is empty so it could return $Nil$.
+ \item[Maintenance:] Before an iteration the value $A[i]$ could be $v$ or not, to the output can be either the index $i$ or $Nil$.
+ \item[Termination:] It the last item is not equal to $v$ then the algorithm should return $Nil$.
+\end{list}
+
+\begin{description}
+ \item[2.1-4] Adding binaries
 \end{description}
 \begin{lstlisting}
-def search_problem(v):
-    """Enter value ``v`` to do a linear search in a list of ints."""
-    from random import randint
+...
+\end{lstlisting}
 
-    A = []
-    i = 0
-    while i < 100:
-        A.append(randint(0, 100))
-        i += 1
 
-    for i in range(0, len(A)):
-        if A[i] == v:
-            print(i)
-            return i
-    print("None")
-    return None
+\begin{description}
+ \item[2.2-1] $\Theta$$(n^3)$
+\end{description}
+
+\begin{description}
+ \item[2.2-2] Selection sort.
+\end{description}
+
+\begin{lstlisting}
+for i in 1:n-1
+    key = A[i]
+    j = i + 1
+    for v in j:n
+        if A[v] < key:
+            A[j] = key
+            key = A[v]
+    A[i] = key
+    i += 1
 \end{lstlisting}
 
 \begin{description}
- \item[Initialization] When $i = 0$ the loop starts so there are no items in the loop.
- \item[Maintenance] ''If it is True before an iteration it remains True before the next iteration''.
-    If index is 50 and it is not equal to $v$, then the loop continues.
- \item[Termination] It the value $v$ is found it will be retuned and the algorithm will exit $0$. If
-    the value $v$ is not found in the list, the algorithm will return $None$ and exit $0$.
+ \item (i) Loop invariant: elements in the subarray $A[1..i-1]$ will be ordered in ascendent order.
+ \item (ii) the last two elements will be ordered anyway so it is only necessary to run to $n-1$.
+ \item (iii) best case run scenario $\Theta$$(n^2)$. Worst case scenario $\Theta$$(n^2)$.
+\end{description}
+
+\begin{description}
+ \item[2.2-3] (i) Linear search of exercise 2.1-3. On average it will run for $\frac{(n+1)}{2}$
+ \item (ii) Worst case $n$.
+ \item (iii) In the best case scenario the first item will be the one that is needed $\Theta$$(1)$. In then
+       worst case scenario the item will be the last of the array $\Theta$$(n)$.
+\end{description}
+
+\begin{description}
+ \item[2.2-4] Modification of algorithms for best case scenarios. For sorting algorithms, check if the array
+ is already sorted. For search algorithm, check if the first item returns the value that we are looking for.
 \end{description}

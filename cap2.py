@@ -77,59 +77,38 @@ def search_problem(v):
     print("None")
     return None
 
-"""
-x = [3,4,6,2,5,1,0,7,9,8]
-print x
-inverse_sort(x)
-
-# 2.1-3
-print "\n# 2.1-3"
-A = [8, 5, 9, 3, 7, 1, 4,]
-v = 2
-
-def do213():
-    for i in range(0, len(A)):
-        key = i
-        if A[key] == v:
-            return key
-    return None
-print do213()
-
-
-# 2.2-2
-print "\n# 2.2-2"
-A = [8, 5, 9, 3, 7, 1, 4,]
-
-for i in range(0, len(A) - 1):
-    print A
-    key = i
-    for j in range(i, len(A)):
-        key2 = j
-        if A[key] > A[key2]:
-            key = key2
-    tmp = A[i]
-    A[i] = A[key]
-    A[key] = tmp
-
-# 2.2-3
-print "\n# 2.2-3"
-A = [8, 5, 9, 3, 7, 1, 4,]
-v = 2
-
-def do223():
-    for i in range(0, len(A)):
-        key = i
-        if A[key] == v:
-            return key
-    return None
-print do223()
-
-print "Worst case teta-n"
-print "Best average case (1 + 2 + n)/n => n(n+1)/2n -> (n+1)/2 -> teta-n"
-"""
-def main():
-    print("run functions")
-    search_problem(10)
+ # 2.1-4
+ def do214(A, B):
+     import re
+     A = str(bin(A))
+     A = re.sub("^0b", "", A)
+     A = list(A)
+     print(A)
+ 
+     B = str(bin(B))
+     B = re.sub("^0b", "", B)
+     B = list(B)
+     print(B)
+ 
+     if len(A) == len(B):
+         n = len(A)
+         C = [0]*(n+1)
+ 
+         i = n-1
+         while i > 0:
+             sum = int(A[i]) + int(B[i]) + int(C[i])
+             print(sum)
+             if sum > 1:
+                 C[i+1] = sum % 2
+                 C[i] = sum / 2
+             else:
+                 C[i+1] = sum
+             print(C)
+             i -= 1
+         return C
+     else:
+         return "Enter other numbers of the same length when in binary."
+ 
 
 
 if __name__ == "__main__":
