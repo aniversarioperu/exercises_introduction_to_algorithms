@@ -1,0 +1,33 @@
+\begin{description}
+ \item[2.2-2] Selection sort.
+\end{description}
+
+\begin{lstlisting}
+for i in 1:n-1
+    key = A[i]
+    j = i + 1
+    for v in j:n
+        if A[v] < key:
+            A[j] = key
+            key = A[v]
+    A[i] = key
+    i += 1
+\end{lstlisting}
+
+\begin{description}
+ \item (i) Loop invariant: elements in the subarray $A[1..i-1]$ will be ordered in ascendent order.
+ \item (ii) the last two elements will be ordered anyway so it is only necessary to run to $n-1$.
+ \item (iii) best case run scenario $\Theta$$(n^2)$. Worst case scenario $\Theta$$(n^2)$.
+\end{description}
+
+\begin{description}
+ \item[2.2-3] (i) Linear search of exercise 2.1-3. On average it will run for $\frac{(n+1)}{2}$
+ \item (ii) Worst case $n$.
+ \item (iii) In the best case scenario the first item will be the one that is needed $\Theta$$(1)$. In then
+       worst case scenario the item will be the last of the array $\Theta$$(n)$.
+\end{description}
+
+\begin{description}
+ \item[2.2-4] Modification of algorithms for best case scenarios. For sorting algorithms, check if the array
+ is already sorted. For search algorithm, check if the first item returns the value that we are looking for.
+\end{description}
