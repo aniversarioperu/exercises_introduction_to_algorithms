@@ -3,8 +3,35 @@
  \begin{center}
  \includegraphics[width=200px]{chapter2/merge_sort.pdf}
  % 2.1-1.png: 39x65 pixel, 9dpi, 11.02x18.36 cm, bb=0 0 312 520
-\end{center}
+ \end{center}
 
+\item[2.3-2] Modified merge procedure
+\begin{lstlisting}
+A = [p, ... q, ... r]
+
+n1 = q - p + 1
+n2 = r - q
+
+L = [i for i in A[1:n1]]
+R = [i for i in A[1:n2]]
+
+i, j = 1, 1
+
+for k in p..r:
+  if L[i] <= R[j]:
+    A[k] = L[i]
+    if i == n1:
+      A[k+1..r] = R[j..n2]
+      break
+    i += 1
+
+  else:
+    A[k] = R[j]
+    if j == n2:
+      A[k+1..r] = L[i..n1]
+      break
+    j += 1
+\end{lstlisting}
 
 \end{description}
 
