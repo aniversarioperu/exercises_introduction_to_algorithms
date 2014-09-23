@@ -33,5 +33,26 @@ for k in p..r:
     j += 1
 \end{lstlisting}
 
+
+\item[2.3-5] Binary search algorithm.
+\begin{lstlisting}
+
+def search(A):
+  index = len(A)/2
+  
+  if A(index) == v:
+    return index
+  else:
+    if A(index) > v:
+      search(A[1:index)
+    else:
+      search(A[index+1:n)
+\end{lstlisting}
+In the worst case scenario the needed index with be the last item in the list. Then the
+algorithm will have to split the list $n/2 + n/4 + n/8 = n(logn)\dfrac{}{}$
 \end{description}
+
+
+
+
 

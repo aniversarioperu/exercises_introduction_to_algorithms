@@ -77,38 +77,59 @@ def search_problem(v):
     print("None")
     return None
 
- # 2.1-4
- def do214(A, B):
-     import re
-     A = str(bin(A))
-     A = re.sub("^0b", "", A)
-     A = list(A)
-     print(A)
- 
-     B = str(bin(B))
-     B = re.sub("^0b", "", B)
-     B = list(B)
-     print(B)
- 
-     if len(A) == len(B):
-         n = len(A)
-         C = [0]*(n+1)
- 
-         i = n-1
-         while i > 0:
-             sum = int(A[i]) + int(B[i]) + int(C[i])
-             print(sum)
-             if sum > 1:
-                 C[i+1] = sum % 2
-                 C[i] = sum / 2
-             else:
-                 C[i+1] = sum
-             print(C)
-             i -= 1
-         return C
-     else:
-         return "Enter other numbers of the same length when in binary."
- 
+# 2.1-4
+def do214(A, B):
+    import re
+    A = str(bin(A))
+    A = re.sub("^0b", "", A)
+    A = list(A)
+    print(A)
+
+    B = str(bin(B))
+    B = re.sub("^0b", "", B)
+    B = list(B)
+    print(B)
+
+    if len(A) == len(B):
+        n = len(A)
+        C = [0]*(n+1)
+
+        i = n-1
+        while i > 0:
+            sum = int(A[i]) + int(B[i]) + int(C[i])
+            print(sum)
+            if sum > 1:
+                C[i+1] = sum % 2
+                C[i] = sum / 2
+            else:
+                C[i+1] = sum
+            print(C)
+            i -= 1
+        return C
+    else:
+        return "Enter other numbers of the same length when in binary."
+
+
+# recursive insertion sort
+# ========================
+def resort(lista):
+    if len(lista) <= 1:
+        return lista
+    else:
+        return insertone(lista[0], resort(lista[1:]))
+
+
+def insertone(lista, element):
+    print(lista)
+    if len(lista) == 0:
+        return [element]
+    if lista[0]:
+        return [element] + lista
+    else:
+        return insertone(element, lista[1:]) + [lista[0]]
+
+def main():
+    #print resort([3,2,1])
 
 
 if __name__ == "__main__":
