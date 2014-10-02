@@ -55,6 +55,42 @@ algorithm will have to split the list $n/2 + n/4 + n/8 = n(logn)\dfrac{}{}$
 \item[2.3-6] Insertion sort with binary search. Splitting the loops saves time but it will still be necessary
 to move the item along the subarrays. So the running time cannot be improved better than $\Theta(n^2)$.
 
+
+\item[2.3-7] Describe a $\Theta(nlgn)$ algorithm, given an array $S$ of $n$ integers and another integer $x$, 
+find whether there are two elements in $S$ whose sum is exactly $X$.
+\begin{lstlisting}
+X = 4
+for i in 1:n
+  suma(i, S[i+1:n])
+  
+def suma(i, lista)
+  if i + lista[0] == X
+    print "Found it"
+    exit()
+  else
+    suma(lista[0], lista[1:n])
+\end{lstlisting}
+
+
+
+In Python code:
+\begin{lstlisting}
+X = 6
+def add_integers():
+    S = [5, 4, 2, 1, 9, 8,]
+    for i in range(0, len(S)):
+        lista = S[i+1:]
+        suma(S[i], lista)
+
+def suma(j, lista):
+    if len(lista) > 0:
+        if j + lista[0] == X:
+            print("Found %i, %i" % (j, lista[0]))
+            sys.exit()
+        else:
+            suma(j+1, lista[1:])
+\end{lstlisting}
+But this code only works for adjacent integers, need to fix it. Not the right solution.
 \end{description}
 
 

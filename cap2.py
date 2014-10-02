@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 import random
+import sys
+
 
 def sort():
     x = []
@@ -128,8 +130,28 @@ def insertone(lista, element):
     else:
         return insertone(element, lista[1:]) + [lista[0]]
 
+
+# adding integers, recursive
+# ==========================
+X = 13
+def add_integers():
+    S = [5, 4, 2, 1, 9, 8,]
+    for i in range(0, len(S)):
+        lista = S[i+1:]
+        suma(S[i], lista)
+
+def suma(j, lista):
+    if len(lista) > 0:
+        if j + lista[0] == X:
+            print("Found %i, %i" % (j, lista[0]))
+            sys.exit()
+        else:
+            suma(j+1, lista[1:])
+
+
+
 def main():
-    #print resort([3,2,1])
+    print add_integers()
 
 
 if __name__ == "__main__":
